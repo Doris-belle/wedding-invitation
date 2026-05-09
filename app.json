@@ -1,12 +1,30 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/index/index",
+    "pages/timeline/timeline"
   ],
   "window": {
     "navigationBarTitleText": "佳佳 & 肖肖 | 婚礼",
     "navigationBarBackgroundColor": "#fff8ef",
     "navigationBarTextStyle": "black",
     "backgroundColor": "#fff8ef"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#c7c3c3",
+    "selectedColor": "#171313",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "婚纱照"
+      },
+      {
+        "pagePath": "pages/timeline/timeline",
+        "text": "时间轴"
+      }
+    ]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

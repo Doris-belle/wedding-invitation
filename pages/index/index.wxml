@@ -41,28 +41,17 @@
   </view>
 
   <view class="content">
-    <view class="tabs">
-      <button class="tab {{activeTab === 'photos' ? 'active' : ''}}" data-tab="photos" bindtap="switchTab">婚纱照</button>
-      <button class="tab {{activeTab === 'timeline' ? 'active' : ''}}" data-tab="timeline" bindtap="switchTab">时间轴</button>
+    <view class="section-title">
+      <text>婚纱照</text>
+      <text>Wedding Photos</text>
     </view>
 
-    <view wx:if="{{activeTab === 'photos'}}" class="photo-grid">
+    <view class="photo-grid">
       <view wx:for="{{photos}}" wx:key="title" class="photo-item">
         <image class="photo-img" src="{{item.src}}" mode="aspectFill"></image>
         <view class="photo-copy">
           <text class="photo-title">{{item.title}}</text>
           <text class="photo-desc">{{item.desc}}</text>
-        </view>
-      </view>
-    </view>
-
-    <view wx:else class="timeline">
-      <view wx:for="{{timeline}}" wx:key="title" class="timeline-item">
-        <view class="timeline-dot"></view>
-        <view class="timeline-card">
-          <text class="timeline-date">{{item.date}}</text>
-          <text class="timeline-title">{{item.title}}</text>
-          <text class="timeline-text">{{item.text}}</text>
         </view>
       </view>
     </view>

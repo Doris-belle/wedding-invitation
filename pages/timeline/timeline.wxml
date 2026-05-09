@@ -1,0 +1,26 @@
+<view class="timeline-page">
+  <view class="top-pattern"></view>
+  <view class="nav-safe"></view>
+
+  <view class="intro">
+    <view class="days-row">
+      <text>心动</text>
+      <text class="days">{{togetherDays}}</text>
+      <text>天</text>
+    </view>
+    <text class="intro-text">我们相识在初秋的校园，恋爱在冬日的圣诞，经历过异地的思念，坚守着彼此的诺言。</text>
+  </view>
+
+  <view class="timeline-line">
+    <view wx:for="{{timeline}}" wx:key="date" class="memory {{item.side}}">
+      <view class="heart">
+        <view class="heart-soft"></view>
+        <view class="heart-red"></view>
+      </view>
+      <view class="memory-copy">
+        <text class="memory-date">{{item.date}}</text>
+        <text class="memory-title">{{item.title}}</text>
+      </view>
+    </view>
+  </view>
+</view>

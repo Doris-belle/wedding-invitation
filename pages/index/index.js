@@ -8,7 +8,6 @@ Page({
     blessingCount: 389,
     showEnvelope: false,
     envelopeOpened: false,
-    activeTab: 'photos',
     photos: [
       {
         src: '/src/images/photo.jpg',
@@ -25,29 +24,13 @@ Page({
         title: '携手白首',
         desc: '山水一程，三生有幸。'
       }
-    ],
-    timeline: [
-      {
-        date: '2025.02.18 10:00',
-        title: '宾客签到',
-        text: '亲友陆续到场，领取伴手礼，合影留念。'
-      },
-      {
-        date: '2025.02.18 11:20',
-        title: '婚礼仪式',
-        text: '佳偶登场，交换誓言，共证良缘。'
-      },
-      {
-        date: '2025.02.18 12:00',
-        title: '喜宴开席',
-        text: '良辰吉日宜宴客，敬请各位亲朋好友入席。'
-      },
-      {
-        date: '2025.02.18 14:00',
-        title: '合影祝福',
-        text: '留下团圆笑颜，也留下今天的好天气。'
-      }
     ]
+  },
+
+  onShow() {
+    if (typeof this.getTabBar === 'function' && this.getTabBar()) {
+      this.getTabBar().setData({ selected: 0 })
+    }
   },
 
   openEnvelope() {
@@ -68,10 +51,5 @@ Page({
       showEnvelope: false,
       envelopeOpened: false
     })
-  },
-
-  switchTab(event) {
-    const activeTab = event.currentTarget.dataset.tab
-    this.setData({ activeTab })
   }
 })
