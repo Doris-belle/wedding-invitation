@@ -1,0 +1,13 @@
+{
+  "pages": [
+    "pages/index/index"
+  ],
+  "window": {
+    "navigationBarTitleText": "佳佳 & 肖肖 | 婚礼",
+    "navigationBarBackgroundColor": "#fff8ef",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#fff8ef"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
