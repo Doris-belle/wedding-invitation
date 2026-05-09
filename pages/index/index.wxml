@@ -1,44 +1,5 @@
 <view class="page-shell">
   <view class="pattern"></view>
-  <view class="nav-safe"></view>
-
-  <view class="header">
-    <view class="title-block">
-      <text class="title">{{couple}}的婚礼</text>
-      <view class="title-line"></view>
-      <text class="subtitle">We are getting married</text>
-    </view>
-    <view class="weather">
-      <view class="sun"></view>
-      <view class="cloud cloud-left"></view>
-      <view class="cloud cloud-right"></view>
-    </view>
-  </view>
-
-  <view class="hero">
-    <view class="hero-glow"></view>
-    <view class="date-card">
-      <image class="couple-photo" src="/src/images/photo.jpg" mode="aspectFill"></image>
-      <text class="date-cn">{{weddingDateCn}}</text>
-      <text class="date-en">{{weddingDateEn}}</text>
-      <text class="date-time">{{weddingTime}}</text>
-      <view class="invite-row">
-        <text class="finger">👉</text>
-        <button class="invite-btn" bindtap="openEnvelope">邀请函</button>
-        <text class="finger">👈</text>
-      </view>
-    </view>
-
-    <view class="location-card">
-      <text class="pin">📍</text>
-      <text>{{location}}</text>
-    </view>
-
-    <view class="blessing-pill">
-      <text>🎉</text>
-      <text>{{blessingCount}}</text>
-    </view>
-  </view>
 
   <view class="content">
     <view class="section-title">
@@ -57,36 +18,79 @@
     </view>
   </view>
 
-  <view wx:if="{{showEnvelope}}" class="overlay">
-    <view class="envelope {{envelopeOpened ? 'opened' : ''}}">
-      <view class="letter">
-        <view class="letter-paper">
-          <view class="letter-columns">
-            <text>两姓联姻</text>
-            <text>一堂缔约</text>
-            <text>珠联璧合</text>
-            <text>佳缘永结</text>
-            <text>乙巳年正月二十一</text>
-            <text>良辰吉日</text>
-            <text>宜室宜家</text>
-            <text>诚邀各位亲朋好友</text>
-            <text>莅临新郎佳佳</text>
-            <text>新娘肖肖新婚典礼</text>
-            <text>共证良缘</text>
-            <text>佳期二零二五年二月十八日十二时整</text>
-            <text>敬备喜筵</text>
-            <text>恭迎尊驾</text>
-          </view>
-          <text class="signature">佳佳肖肖夫妇谨邀</text>
+  <view wx:if="{{showSplash}}" class="splash-screen">
+    <view class="splash-pattern"></view>
+    <view class="nav-safe"></view>
+
+    <view class="header">
+      <view class="title-block">
+        <text class="title">{{couple}}的婚礼</text>
+        <view class="title-line"></view>
+        <text class="subtitle">We are getting married</text>
+      </view>
+      <view class="weather">
+        <view class="sun"></view>
+        <view class="cloud cloud-left"></view>
+        <view class="cloud cloud-right"></view>
+      </view>
+    </view>
+
+    <view class="hero">
+      <view class="hero-glow"></view>
+      <view class="date-card">
+        <image class="couple-photo" src="/src/images/photo.jpg" mode="aspectFill"></image>
+        <text class="date-cn">{{weddingDateCn}}</text>
+        <text class="date-en">{{weddingDateEn}}</text>
+        <text class="date-time">{{weddingTime}}</text>
+        <view class="invite-row">
+          <text class="finger">👉</text>
+          <button class="invite-btn" bindtap="openEnvelope">邀请函</button>
+          <text class="finger">👈</text>
         </view>
       </view>
 
-      <view class="cover-left"></view>
-      <view class="cover-right"></view>
-      <view class="envelope-front"></view>
-      <view class="double-happiness">囍</view>
-      <button wx:if="{{!envelopeOpened}}" class="seal-btn" bindtap="revealInvitation">启</button>
-      <button wx:else class="close-btn" bindtap="closeEnvelope">×</button>
+      <view class="location-card">
+        <text class="pin">📍</text>
+        <text>{{location}}</text>
+      </view>
+
+      <view class="blessing-pill">
+        <text>🎉</text>
+        <text>{{blessingCount}}</text>
+      </view>
+    </view>
+
+    <view wx:if="{{showEnvelope}}" class="overlay">
+      <view class="envelope {{envelopeOpened ? 'opened' : ''}}">
+        <view class="letter">
+          <view class="letter-paper">
+            <view class="letter-columns">
+              <text>两姓联姻</text>
+              <text>一堂缔约</text>
+              <text>珠联璧合</text>
+              <text>佳缘永结</text>
+              <text>乙巳年正月二十一</text>
+              <text>良辰吉日</text>
+              <text>宜室宜家</text>
+              <text>诚邀各位亲朋好友</text>
+              <text>莅临新郎佳佳</text>
+              <text>新娘肖肖新婚典礼</text>
+              <text>共证良缘</text>
+              <text>佳期二零二五年二月十八日十二时整</text>
+              <text>敬备喜筵</text>
+              <text>恭迎尊驾</text>
+            </view>
+            <text class="signature">佳佳肖肖夫妇谨邀</text>
+          </view>
+        </view>
+
+        <view class="cover-left"></view>
+        <view class="cover-right"></view>
+        <view class="envelope-front"></view>
+        <view class="double-happiness">囍</view>
+        <button wx:if="{{!envelopeOpened}}" class="seal-btn" bindtap="revealInvitation">启</button>
+        <button wx:else class="close-btn" bindtap="closeEnvelope">×</button>
+      </view>
     </view>
   </view>
 </view>

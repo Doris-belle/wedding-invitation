@@ -5,7 +5,8 @@
   overflow-x: hidden;
 }
 
-.pattern {
+.pattern,
+.splash-pattern {
   position: fixed;
   top: 0;
   right: 0;
@@ -18,6 +19,23 @@
     radial-gradient(ellipse at center bottom, transparent 58%, rgba(151, 180, 255, 0.22) 60%, rgba(151, 180, 255, 0.22) 68%, transparent 70%);
   background-size: 48rpx 24rpx;
   background-position: 0 0, 24rpx 0;
+}
+
+.splash-screen {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  padding: 0 36rpx;
+  overflow: hidden;
+  background: #fffdfa;
+}
+
+.splash-pattern {
+  position: absolute;
+  z-index: -1;
 }
 
 .nav-safe {
@@ -226,7 +244,7 @@
   width: 100%;
   max-width: 640rpx;
   margin: 0 auto;
-  padding-top: 10rpx;
+  padding-top: 96rpx;
 }
 
 .section-title {
@@ -356,7 +374,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 50;
+  z-index: 2010;
   display: flex;
   align-items: flex-start;
   justify-content: center;

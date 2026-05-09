@@ -6,6 +6,7 @@ Page({
     weddingTime: '12:00 AM',
     location: '绵阳市三台县义景生态园',
     blessingCount: 389,
+    showSplash: true,
     showEnvelope: false,
     envelopeOpened: false,
     photos: [
@@ -48,6 +49,7 @@ Page({
 
   closeEnvelope() {
     this.setData({
+      showSplash: false,
       showEnvelope: false,
       envelopeOpened: false
     })

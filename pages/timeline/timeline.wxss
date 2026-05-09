@@ -66,8 +66,8 @@
 
 .memory {
   position: absolute;
-  left: 0;
-  width: 320rpx;
+  left: -300rpx;
+  width: 600rpx;
 }
 
 .memory:nth-child(1) {
@@ -92,7 +92,7 @@
 
 .heart {
   position: absolute;
-  left: -18rpx;
+  left: 282rpx;
   top: -12rpx;
   width: 36rpx;
   height: 36rpx;
@@ -163,18 +163,21 @@
 .memory-copy {
   position: absolute;
   top: 34rpx;
+  width: 248rpx;
   display: flex;
   flex-direction: column;
 }
 
 .memory.left .memory-copy {
-  right: 48rpx;
+  left: 0;
   align-items: flex-end;
+  text-align: right;
 }
 
 .memory.right .memory-copy {
-  left: 48rpx;
+  right: 0;
   align-items: flex-start;
+  text-align: left;
 }
 
 .memory-date {
