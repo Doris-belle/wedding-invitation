@@ -28,9 +28,21 @@ Page({
     ]
   },
 
+  onLoad() {
+    const app = getApp()
+    const hasEnteredHome = app.globalData.hasEnteredHome
+
+    this.setData({
+      showSplash: !hasEnteredHome
+    })
+  },
+
   onShow() {
     if (typeof this.getTabBar === 'function' && this.getTabBar()) {
-      this.getTabBar().setData({ selected: 0 })
+      this.getTabBar().setData({
+        selected: 0,
+        hidden: this.data.showSplash
+      })
     }
   },
 
@@ -48,10 +60,19 @@ Page({
   },
 
   closeEnvelope() {
+    getApp().globalData.hasEnteredHome = true
+
     this.setData({
       showSplash: false,
       showEnvelope: false,
       envelopeOpened: false
     })
+
+    if (typeof this.getTabBar === 'function' && this.getTabBar()) {
+      this.getTabBar().setData({
+        selected: 0,
+        hidden: false
+      })
+    }
   }
 })

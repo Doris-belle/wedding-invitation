@@ -31,8 +31,13 @@ Page({
   },
 
   onShow() {
+    getApp().globalData.hasEnteredHome = true
+
     if (typeof this.getTabBar === 'function' && this.getTabBar()) {
-      this.getTabBar().setData({ selected: 1 })
+      this.getTabBar().setData({
+        selected: 1,
+        hidden: false
+      })
     }
   }
 })
