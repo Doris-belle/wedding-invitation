@@ -47,8 +47,8 @@
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 0;
-  height: 74vh;
+  bottom: 140rpx;
+  height: 86vh;
   z-index: 2;
   pointer-events: none;
   overflow: hidden;
@@ -56,12 +56,12 @@
 
 .confetti {
   position: absolute;
-  bottom: -34rpx;
+  bottom: 0;
   width: 14rpx;
   height: 28rpx;
   border-radius: 999rpx;
   opacity: 0;
-  animation: confettiUp 2.7s ease-out both;
+  animation: confettiUp 3.2s ease-out both;
 }
 
 .confetti.dot {
@@ -93,7 +93,7 @@
   }
   100% {
     opacity: 0;
-    transform: translate3d(24rpx, -620rpx, 0) rotate(280deg) scale(1);
+    transform: translate3d(var(--drift), -980rpx, 0) rotate(380deg) scale(1);
   }
 }
 
@@ -321,49 +321,32 @@
 
 .content {
   width: 100%;
-  max-width: 640rpx;
+  max-width: 680rpx;
   margin: 0 auto;
-  padding-top: 96rpx;
-}
-
-.section-title {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  padding: 8rpx 4rpx 0;
-}
-
-.section-title text:first-child {
-  color: #2f2a2a;
-  font-size: 34rpx;
-  font-weight: 900;
-}
-
-.section-title text:last-child {
-  color: #c8a365;
-  font-size: 22rpx;
-  font-weight: 800;
+  padding-top: 48rpx;
 }
 
 .photo-grid {
-  margin-top: 24rpx;
+  margin-top: 0;
 }
 
 .photo-item {
   position: relative;
   display: block;
   overflow: hidden;
-  border: 2rpx solid rgba(215, 190, 124, 0.55);
-  background: rgba(255, 255, 255, 0.82);
+  border-radius: 8rpx;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 14rpx 38rpx rgba(84, 75, 68, 0.12);
 }
 
 .photo-item + .photo-item {
-  margin-top: 22rpx;
+  margin-top: 30rpx;
 }
 
 .photo-img {
   display: block;
   width: 100%;
+  border-radius: 8rpx;
 }
 
 .photo-title {
@@ -453,9 +436,9 @@
 
 .envelope {
   position: relative;
-  width: 86vw;
-  max-width: 620rpx;
-  height: 860rpx;
+  width: 88vw;
+  max-width: 650rpx;
+  height: 980rpx;
   perspective: 900rpx;
   animation: envelopeIn 0.55s cubic-bezier(.24, 1.5, .36, 1) both;
 }
@@ -547,7 +530,7 @@
 .seal-btn {
   position: absolute;
   left: 50%;
-  bottom: 190rpx;
+  bottom: 250rpx;
   z-index: 10;
   width: 300rpx;
   height: 74rpx;
@@ -583,7 +566,7 @@
 .letter-paper {
   position: relative;
   width: 88%;
-  height: 786rpx;
+  height: 906rpx;
   padding: 28rpx 28rpx 34rpx;
   border: 8rpx solid #e7d28f;
   background: #fff1de;

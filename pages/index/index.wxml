@@ -2,11 +2,6 @@
   <view class="pattern"></view>
 
   <view class="content">
-    <view class="section-title">
-      <text>婚纱照</text>
-      <text>Wedding Photos</text>
-    </view>
-
     <view class="photo-grid">
       <view wx:for="{{photos}}" wx:key="id" class="photo-item">
         <image class="photo-img" src="{{item.src}}" mode="widthFix"></image>
@@ -19,9 +14,9 @@
     <view class="confetti-layer">
       <view
         wx:for="{{confetti}}"
-        wx:key="left"
+        wx:key="id"
         class="confetti {{item.color}} {{item.shape}}"
-        style="left: {{item.left}}%; animation-delay: {{item.delay}}ms;"
+        style="left: {{item.left}}%; --drift: {{item.drift}}rpx; animation-delay: {{item.delay}}ms;"
       ></view>
     </view>
     <view class="splash-content">
@@ -73,18 +68,18 @@
               <text>一堂缔约</text>
               <text>珠联璧合</text>
               <text>佳缘永结</text>
-              <text>乙巳年正月二十一</text>
+              <text>乙巳年八月初六</text>
               <text>良辰吉日</text>
               <text>宜室宜家</text>
               <text>诚邀各位亲朋好友</text>
-              <text>莅临新郎佳佳</text>
-              <text>新娘肖肖新婚典礼</text>
+              <text>莅临新郎多多</text>
+              <text>新娘慢慢新婚典礼</text>
               <text>共证良缘</text>
-              <text>佳期二零二五年二月十八日十二时整</text>
+              <text>佳期二零二六年九月十六日十二时整</text>
               <text>敬备喜筵</text>
               <text>恭迎尊驾</text>
             </view>
-            <text class="signature">佳佳肖肖夫妇谨邀</text>
+            <text class="signature">多多慢慢夫妇谨邀</text>
           </view>
         </view>
 
