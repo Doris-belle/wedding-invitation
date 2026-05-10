@@ -9,21 +9,24 @@ Page({
     showSplash: true,
     showEnvelope: false,
     envelopeOpened: false,
+    envelopeClosing: false,
+    shareImage: '/src/images/photo.jpg',
     photos: [
       {
         src: '/src/images/photo.jpg',
-        title: '初见欢喜',
-        desc: '从并肩而立，到余生同行。'
+        title: '婚纱照 01'
       },
       {
         src: '/src/images/photo.jpg',
-        title: '今日良辰',
-        desc: '把所有温柔，写进这一天。'
+        title: '婚纱照 02'
       },
       {
         src: '/src/images/photo.jpg',
-        title: '携手白首',
-        desc: '山水一程，三生有幸。'
+        title: '婚纱照 03'
+      },
+      {
+        src: '/src/images/photo.jpg',
+        title: '婚纱照 04'
       }
     ]
   },
@@ -34,6 +37,11 @@ Page({
 
     this.setData({
       showSplash: !hasEnteredHome
+    })
+
+    wx.showShareMenu({
+      withShareTicket: true,
+      menus: ['shareAppMessage', 'shareTimeline']
     })
   },
 
@@ -49,7 +57,8 @@ Page({
   openEnvelope() {
     this.setData({
       showEnvelope: true,
-      envelopeOpened: false
+      envelopeOpened: false,
+      envelopeClosing: false
     })
   },
 
@@ -60,19 +69,42 @@ Page({
   },
 
   closeEnvelope() {
-    getApp().globalData.hasEnteredHome = true
-
     this.setData({
-      showSplash: false,
-      showEnvelope: false,
-      envelopeOpened: false
+      envelopeOpened: false,
+      envelopeClosing: true
     })
 
-    if (typeof this.getTabBar === 'function' && this.getTabBar()) {
-      this.getTabBar().setData({
-        selected: 0,
-        hidden: false
+    setTimeout(() => {
+      getApp().globalData.hasEnteredHome = true
+
+      this.setData({
+        showSplash: false,
+        showEnvelope: false,
+        envelopeClosing: false
       })
+
+      if (typeof this.getTabBar === 'function' && this.getTabBar()) {
+        this.getTabBar().setData({
+          selected: 0,
+          hidden: false
+        })
+      }
+    }, 1250)
+  },
+
+  onShareAppMessage() {
+    return {
+      title: '我们结婚啦',
+      path: '/pages/index/index',
+      imageUrl: this.data.shareImage
+    }
+  },
+
+  onShareTimeline() {
+    return {
+      title: '我们结婚啦',
+      query: '',
+      imageUrl: this.data.shareImage
     }
   }
 })

@@ -9,59 +9,56 @@
 
     <view class="photo-grid">
       <view wx:for="{{photos}}" wx:key="title" class="photo-item">
-        <image class="photo-img" src="{{item.src}}" mode="aspectFill"></image>
-        <view class="photo-copy">
-          <text class="photo-title">{{item.title}}</text>
-          <text class="photo-desc">{{item.desc}}</text>
-        </view>
+        <image class="photo-img" src="{{item.src}}" mode="widthFix"></image>
+        <text class="photo-title">{{item.title}}</text>
       </view>
     </view>
   </view>
 
   <view wx:if="{{showSplash}}" class="splash-screen">
     <view class="splash-pattern"></view>
-    <view class="nav-safe"></view>
-
-    <view class="header">
-      <view class="title-block">
-        <text class="title">{{couple}}的婚礼</text>
-        <view class="title-line"></view>
-        <text class="subtitle">We are getting married</text>
-      </view>
-      <view class="weather">
-        <view class="sun"></view>
-        <view class="cloud cloud-left"></view>
-        <view class="cloud cloud-right"></view>
-      </view>
-    </view>
-
-    <view class="hero">
-      <view class="hero-glow"></view>
-      <view class="date-card">
-        <image class="couple-photo" src="/src/images/photo.jpg" mode="aspectFill"></image>
-        <text class="date-cn">{{weddingDateCn}}</text>
-        <text class="date-en">{{weddingDateEn}}</text>
-        <text class="date-time">{{weddingTime}}</text>
-        <view class="invite-row">
-          <text class="finger">👉</text>
-          <button class="invite-btn" bindtap="openEnvelope">邀请函</button>
-          <text class="finger">👈</text>
+    <view class="splash-content">
+      <view class="header">
+        <view class="title-block">
+          <text class="title">{{couple}}的婚礼</text>
+          <view class="title-line"></view>
+          <text class="subtitle">We are getting married</text>
+        </view>
+        <view class="weather">
+          <view class="sun"></view>
+          <view class="cloud cloud-left"></view>
+          <view class="cloud cloud-right"></view>
         </view>
       </view>
 
-      <view class="location-card">
-        <text class="pin">📍</text>
-        <text>{{location}}</text>
-      </view>
+      <view class="hero">
+        <view class="hero-glow"></view>
+        <view class="date-card">
+          <image class="couple-photo" src="/src/images/photo.jpg" mode="aspectFill"></image>
+          <text class="date-cn">{{weddingDateCn}}</text>
+          <text class="date-en">{{weddingDateEn}}</text>
+          <text class="date-time">{{weddingTime}}</text>
+          <view class="invite-row">
+            <text class="finger">👉</text>
+            <button class="invite-btn" bindtap="openEnvelope">邀请函</button>
+            <text class="finger">👈</text>
+          </view>
+        </view>
 
-      <view class="blessing-pill">
-        <text>🎉</text>
-        <text>{{blessingCount}}</text>
+        <view class="location-card">
+          <text class="pin">📍</text>
+          <text>{{location}}</text>
+        </view>
+
+        <view class="blessing-pill">
+          <text>🎉</text>
+          <text>{{blessingCount}}</text>
+        </view>
       </view>
     </view>
 
     <view wx:if="{{showEnvelope}}" class="overlay">
-      <view class="envelope {{envelopeOpened ? 'opened' : ''}}">
+      <view class="envelope {{envelopeOpened ? 'opened' : ''}} {{envelopeClosing ? 'closing' : ''}}">
         <view class="letter">
           <view class="letter-paper">
             <view class="letter-columns">

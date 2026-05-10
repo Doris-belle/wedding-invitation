@@ -1,6 +1,7 @@
 Page({
   data: {
     togetherDays: 4884,
+    shareImage: '/src/images/photo.jpg',
     timeline: [
       {
         date: '2015.09.09',
@@ -38,6 +39,29 @@ Page({
         selected: 1,
         hidden: false
       })
+    }
+  },
+
+  onLoad() {
+    wx.showShareMenu({
+      withShareTicket: true,
+      menus: ['shareAppMessage', 'shareTimeline']
+    })
+  },
+
+  onShareAppMessage() {
+    return {
+      title: '我们结婚啦',
+      path: '/pages/index/index',
+      imageUrl: this.data.shareImage
+    }
+  },
+
+  onShareTimeline() {
+    return {
+      title: '我们结婚啦',
+      query: '',
+      imageUrl: this.data.shareImage
     }
   }
 })

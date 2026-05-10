@@ -33,6 +33,16 @@
   background: #fffdfa;
 }
 
+.splash-content {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 56rpx 0 72rpx;
+}
+
 .splash-pattern {
   position: absolute;
   z-index: -1;
@@ -47,7 +57,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  min-height: 134rpx;
+  min-height: 112rpx;
 }
 
 .title-block {
@@ -82,7 +92,7 @@
 .weather {
   position: absolute;
   right: 18rpx;
-  top: 0;
+  top: -2rpx;
   width: 142rpx;
   height: 92rpx;
 }
@@ -124,7 +134,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 36rpx;
+  padding-bottom: 0;
 }
 
 .hero-glow {
@@ -141,7 +151,7 @@
   width: 86vw;
   max-width: 560rpx;
   min-height: 520rpx;
-  margin-top: 96rpx;
+  margin-top: 76rpx;
   padding: 0 32rpx 36rpx;
   display: flex;
   flex-direction: column;
@@ -271,8 +281,8 @@
 }
 
 .photo-item {
-  display: flex;
-  min-height: 170rpx;
+  position: relative;
+  display: block;
   overflow: hidden;
   border: 2rpx solid rgba(215, 190, 124, 0.55);
   background: rgba(255, 255, 255, 0.82);
@@ -283,21 +293,15 @@
 }
 
 .photo-img {
-  width: 220rpx;
-  height: 170rpx;
-}
-
-.photo-copy {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 24rpx;
+  display: block;
+  width: 100%;
 }
 
 .photo-title {
+  display: block;
+  padding: 20rpx 22rpx;
   color: #2f2a2a;
-  font-size: 30rpx;
+  font-size: 28rpx;
   font-weight: 900;
 }
 
@@ -376,19 +380,23 @@
   left: 0;
   z-index: 2010;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  padding-top: 168rpx;
+  padding: 0 36rpx;
   background: rgba(255, 250, 244, 0.15);
 }
 
 .envelope {
   position: relative;
-  width: 88vw;
-  max-width: 660rpx;
-  height: 760rpx;
+  width: 86vw;
+  max-width: 620rpx;
+  height: 860rpx;
   perspective: 900rpx;
   animation: envelopeIn 0.55s cubic-bezier(.24, 1.5, .36, 1) both;
+}
+
+.envelope.closing {
+  animation: envelopeOut 0.55s cubic-bezier(.45, 0, .2, 1) 0.62s both;
 }
 
 @keyframes envelopeIn {
@@ -399,6 +407,17 @@
   to {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+@keyframes envelopeOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.08);
   }
 }
 
@@ -462,18 +481,19 @@
 
 .seal-btn {
   position: absolute;
-  right: 132rpx;
-  bottom: 154rpx;
+  left: 50%;
+  bottom: 190rpx;
   z-index: 10;
-  width: 92rpx;
-  height: 92rpx;
-  border: 9rpx solid #ffe3a7;
-  border-radius: 50%;
+  width: 300rpx;
+  height: 74rpx;
+  transform: translateX(-50%);
+  border: 7rpx solid #ffe3a7;
+  border-radius: 999rpx;
   background: #fff3cd;
   color: #c99b4c;
-  font-size: 42rpx;
+  font-size: 34rpx;
   font-weight: 900;
-  line-height: 74rpx;
+  line-height: 60rpx;
 }
 
 .letter {
@@ -498,7 +518,7 @@
 .letter-paper {
   position: relative;
   width: 88%;
-  height: 686rpx;
+  height: 786rpx;
   padding: 28rpx 28rpx 34rpx;
   border: 8rpx solid #e7d28f;
   background: #fff1de;
