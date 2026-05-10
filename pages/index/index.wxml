@@ -8,15 +8,22 @@
     </view>
 
     <view class="photo-grid">
-      <view wx:for="{{photos}}" wx:key="title" class="photo-item">
+      <view wx:for="{{photos}}" wx:key="id" class="photo-item">
         <image class="photo-img" src="{{item.src}}" mode="widthFix"></image>
-        <text class="photo-title">{{item.title}}</text>
       </view>
     </view>
   </view>
 
   <view wx:if="{{showSplash}}" class="splash-screen">
     <view class="splash-pattern"></view>
+    <view class="confetti-layer">
+      <view
+        wx:for="{{confetti}}"
+        wx:key="left"
+        class="confetti {{item.color}} {{item.shape}}"
+        style="left: {{item.left}}%; animation-delay: {{item.delay}}ms;"
+      ></view>
+    </view>
     <view class="splash-content">
       <view class="header">
         <view class="title-block">
@@ -34,7 +41,7 @@
       <view class="hero">
         <view class="hero-glow"></view>
         <view class="date-card">
-          <image class="couple-photo" src="/src/images/photo.jpg" mode="aspectFill"></image>
+          <image class="couple-photo" src="{{coupleImage}}" mode="widthFix"></image>
           <text class="date-cn">{{weddingDateCn}}</text>
           <text class="date-en">{{weddingDateEn}}</text>
           <text class="date-time">{{weddingTime}}</text>
