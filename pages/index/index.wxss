@@ -61,7 +61,7 @@
   height: 28rpx;
   border-radius: 999rpx;
   opacity: 0;
-  animation: confettiUp 3.2s ease-out both;
+  animation: confettiUp 2.35s cubic-bezier(.18, .74, .34, 1) both;
 }
 
 .confetti.dot {
@@ -213,7 +213,7 @@
   background: rgba(255, 251, 250, 0.94);
   border: 4rpx solid #d7be7c;
   box-shadow: 0 18rpx 48rpx rgba(185, 145, 120, 0.17);
-  animation: cardDrop 0.95s cubic-bezier(.2, 1.35, .38, 1) both;
+  animation: cardDrop 1.25s cubic-bezier(.18, 1.05, .32, 1) both;
 }
 
 .couple-photo {
@@ -224,11 +224,11 @@
 @keyframes cardDrop {
   0% {
     opacity: 0;
-    transform: translateY(-120rpx) scale(0.98);
+    transform: translateY(-150rpx) scale(0.98);
   }
   66% {
     opacity: 1;
-    transform: translateY(18rpx) scale(1);
+    transform: translateY(14rpx) scale(1);
   }
   100% {
     opacity: 1;
@@ -323,7 +323,6 @@
   width: 100%;
   max-width: 680rpx;
   margin: 0 auto;
-  padding-top: 48rpx;
 }
 
 .photo-grid {

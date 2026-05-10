@@ -1,7 +1,7 @@
 <view class="page-shell">
   <view class="pattern"></view>
 
-  <view class="content">
+  <view class="content" style="padding-top: {{safeTop}}px;">
     <view class="photo-grid">
       <view wx:for="{{photos}}" wx:key="id" class="photo-item">
         <image class="photo-img" src="{{item.src}}" mode="widthFix"></image>

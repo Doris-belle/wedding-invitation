@@ -10,6 +10,7 @@ Page({
     showEnvelope: false,
     envelopeOpened: false,
     envelopeClosing: false,
+    safeTop: 72,
     shareImage: '/src/images/photo.jpg',
     coupleImage: '/src/images/wed-cp.png',
     musicSrc: '/src/audio/elegant-wedding.wav',
@@ -70,9 +71,15 @@ Page({
   onLoad() {
     const app = getApp()
     const hasEnteredHome = app.globalData.hasEnteredHome
+    const systemInfo = wx.getSystemInfoSync()
+    const menuButton = wx.getMenuButtonBoundingClientRect()
+    const safeTop = menuButton && menuButton.bottom
+      ? menuButton.bottom + 18
+      : systemInfo.statusBarHeight + 64
 
     this.setData({
-      showSplash: !hasEnteredHome
+      showSplash: !hasEnteredHome,
+      safeTop
     })
 
     wx.showShareMenu({
